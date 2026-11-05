@@ -1,4 +1,4 @@
-import type { Screen } from './types';
+import type { ContactCopy, Screen } from './types';
 
 /**
  * Copy for the home page, in the order it appears. Change a headline or a
@@ -114,8 +114,12 @@ export const home = {
       title: 'You’re already on the list.',
       body: 'We have a request from {email}, so there is nothing more to do. We will reply there.'
     },
-    rateLimited:
-      'That is a lot of requests from one place in a short time. Please wait an hour and try again, or email research@example.com.',
+    rateLimited: {
+      withEmail:
+        'That is a lot of requests from one place in a short time. Please wait an hour and try again, or write to {contact}.',
+      withoutEmail:
+        'That is a lot of requests from one place in a short time. Please wait an hour and try again.'
+    } as ContactCopy,
     failed:
       'We couldn’t send your request. Your answers are still here; check your connection and try again in a moment.',
     privacyNote:

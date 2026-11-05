@@ -21,6 +21,13 @@ export type Screen =
   | { kind: 'image'; image: string; alt: string }
   | { kind: 'video'; src: string; poster?: string; alt: string };
 
+/**
+ * Copy that mentions the site's public email address (`siteConfig.email`).
+ * Once the address is set, `withEmail` is shown with `{contact}` replaced by
+ * it; until then `withoutEmail` is shown, or nothing if it's left out.
+ */
+export type ContactCopy = { withEmail: string; withoutEmail?: string };
+
 /** A margin note. Reference it in Markdown as `[^id]`. */
 export type Sidenote = { id: string; text: string };
 

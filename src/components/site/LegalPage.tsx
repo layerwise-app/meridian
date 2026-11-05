@@ -1,12 +1,12 @@
-import type { privacyPage } from '~/content/pages';
+import type { LegalSection, privacyPage } from '~/content/pages';
 import { figureAspects } from '~/content/figures';
+import { contactCopy } from '~/lib/contact';
 import { formatDate } from '~/lib/share';
 import { ScreenSlot } from '~/components/figure/ScreenSlot';
 
-type LegalContent = Pick<
-  typeof privacyPage,
-  'kicker' | 'title' | 'updated' | 'intro' | 'sections' | 'screen'
->;
+type LegalContent = Pick<typeof privacyPage, 'kicker' | 'title' | 'updated' | 'intro' | 'screen'> & {
+  sections: LegalSection[];
+};
 
 /** Privacy and Terms share one plain layout. */
 export function LegalPage({ page }: { page: LegalContent }) {
@@ -44,9 +44,9 @@ export function LegalPage({ page }: { page: LegalContent }) {
                 {section.heading}
               </h2>
               <div className='mt-3 space-y-3 leading-relaxed'>
-                {section.body.map((paragraph) => (
-                  <p key={paragraph}>{linkEmails(paragraph)}</p>
-                ))}
+                {section.body.map(contactCopy).map((paragraph) =>
+                  paragraph ? <p key={paragraph}>{linkEmails(paragraph)}</p> : null
+                )}
               </div>
             </section>
           ))}

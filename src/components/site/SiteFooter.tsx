@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import { useState } from 'react';
+import { contactEmail } from '~/lib/contact';
 import { siteConfig } from '~/site.config';
 import { LogoMark } from './LogoMark';
 
@@ -7,7 +8,11 @@ export function SiteFooter() {
   // Read during render, not at module load: Workers report the Unix epoch
   // outside a request, which printed 1970 on the server.
   const [year] = useState(() => new Date().getUTCFullYear());
-  const social = siteConfig.social.filter((item) => item.href);
+  // Links with no address yet stay hidden, so none leads to a placeholder.
+  const social = [
+    ...(contactEmail ? [{ label: 'Email', href: `mailto:${contactEmail}` }] : []),
+    ...siteConfig.social.filter((item) => item.href.trim())
+  ];
   const [ctaPath, ctaHash] = siteConfig.cta.href.split('#');
   return (
     <footer className='mt-28 border-t border-ink'>

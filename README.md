@@ -20,7 +20,7 @@ follow.
 
 | What | Where |
 | --- | --- |
-| Company name, tagline, navigation, button labels, social links, colours, fonts, `ownerEmail` | `src/site.config.ts` |
+| Company name, tagline, navigation, button labels, public `email`, social links, colours, fonts, `ownerEmail` | `src/site.config.ts` |
 | Home, section by section in page order | `src/content/home.ts` |
 | Meridian 3 model card and evaluation table | `src/content/model-card.ts` |
 | Open roles and how to apply | `src/content/careers.ts` |
@@ -29,6 +29,22 @@ follow.
 
 Every "Request research access" button goes to the form at `/#access`; change
 the label once in `siteConfig.cta`.
+
+### Contact and social links
+
+These start empty, so no link sends a visitor to an address nobody reads.
+Each one stays hidden until you set it in `src/site.config.ts`:
+
+- `email` is the public address visitors can write to. Once it is set, the
+  footer shows an Email link, and Privacy, Terms, and the form's rate-limit
+  message mention it. Until then those lines read without it.
+- Each entry in `social` (GitHub, Bluesky, LinkedIn) appears in the footer
+  once its `href` is filled in.
+
+`email` is public; `ownerEmail` (below) is private and only receives
+notifications. The apply address on Careers, `careers@example.com` in
+`src/content/careers.ts`, is also a placeholder: replace it with an inbox
+someone reads.
 
 After changing a title, seed, colour, or font, run `pnpm share-images` to
 redraw the share images and figure stills.

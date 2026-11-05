@@ -1,6 +1,7 @@
 import { Link } from '@tanstack/react-router';
 import { useEffect, useId, useRef, useState } from 'react';
 import { home } from '~/content/home';
+import { contactCopy } from '~/lib/contact';
 import {
   charCount,
   FIELD_LIMITS,
@@ -233,7 +234,7 @@ export function AccessForm({ fallbackStatus }: { fallbackStatus?: FallbackStatus
 
       <div role='alert' aria-live='assertive' className='mt-5 empty:hidden'>
         {phase === 'failed' ? <FormNotice>{copy.failed}</FormNotice> : null}
-        {phase === 'rate_limited' ? <FormNotice>{copy.rateLimited}</FormNotice> : null}
+        {phase === 'rate_limited' ? <FormNotice>{contactCopy(copy.rateLimited)}</FormNotice> : null}
       </div>
     </form>
   );

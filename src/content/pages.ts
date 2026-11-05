@@ -1,4 +1,4 @@
-import type { Screen } from './types';
+import type { ContactCopy, Screen } from './types';
 
 /** Copy for the research index, the legal pages, and the 404 page. */
 
@@ -22,7 +22,7 @@ export const researchIndex = {
 
 export const comingSoon = 'Full paper coming soon';
 
-type LegalSection = { heading: string; body: string[] };
+export type LegalSection = { heading: string; body: (string | ContactCopy)[] };
 
 export const privacyPage = {
   seo: {
@@ -64,7 +64,13 @@ export const privacyPage = {
     {
       heading: 'Your rights',
       body: [
-        'You can ask for a copy of what we hold about you, ask us to correct it, or ask us to delete it, by writing to privacy@example.com. If you are unhappy with our answer, you can complain to your local data protection authority.'
+        {
+          withEmail:
+            'You can ask for a copy of what we hold about you, ask us to correct it, or ask us to delete it, by writing to {contact}.',
+          withoutEmail:
+            'You can ask for a copy of what we hold about you, ask us to correct it, or ask us to delete it, by replying to any email we have sent you.'
+        },
+        'If you are unhappy with our answer, you can complain to your local data protection authority.'
       ]
     }
   ] satisfies LegalSection[],
@@ -102,9 +108,10 @@ export const termsPage = {
       ]
     },
     {
-      heading: 'Changes and contact',
+      heading: 'Changes to these terms',
       body: [
-        'If we change these terms, we will update the date at the top. Questions go to hello@example.com.'
+        'If we change these terms, we will update the date at the top.',
+        { withEmail: 'Questions about them go to {contact}.' }
       ]
     }
   ] satisfies LegalSection[],

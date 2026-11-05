@@ -30,11 +30,18 @@ export const siteConfig = {
   },
 
   /**
-   * Shown in the footer. Entries with an empty `href` are hidden, so fill in
-   * the ones you use.
+   * The public address visitors can write to, like `hello@yourlab.org`. Leave
+   * it empty until someone reads it: the footer's Email link and every line
+   * that mentions it (on Privacy, Terms, and the access form) stay hidden
+   * until it's set.
+   */
+  email: '',
+
+  /**
+   * Shown in the footer. Each starts empty and stays hidden until you fill in
+   * its `href`, so no link points at a placeholder.
    */
   social: [
-    { label: 'Email', href: 'mailto:hello@example.com' },
     { label: 'GitHub', href: '' },
     { label: 'Bluesky', href: '' },
     { label: 'LinkedIn', href: '' }
