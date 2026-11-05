@@ -1,6 +1,8 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Meridian",
+  "short_name": "Meridian",
+  "description": "An independent AI research lab in Edinburgh and Montréal.",
+  "start_url": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +15,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#F5F1E8",
+  "background_color": "#F5F1E8",
   "display": "standalone"
 }

@@ -1,8 +1,8 @@
-import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
+import { sqliteTable, text, integer, index } from 'drizzle-orm/sqlite-core';
 
-// Better Auth tables. After adding an auth plugin, run
-// `pnpm run auth:generate --yes`, copy only its new tables and columns from the
-// generated `auth-schema.ts` into this section, then delete that file.
+// Authentication tables from the Layerwise starter. This site has no accounts,
+// so nothing reads or writes them; they stay so existing databases migrate
+// without dropping tables.
 
 export const user = sqliteTable('user', {
   id: text('id').primaryKey(),
@@ -73,15 +73,54 @@ export const verification = sqliteTable('verification', {
   )
 });
 
-// Define your own tables below, then run `pnpm run db:generate` to create a
-// migration. Migrations are applied to the production D1 database on publish.
-//
-// Example:
-//
-// export const posts = sqliteTable('posts', {
-//   id: integer('id').primaryKey({ autoIncrement: true }),
-//   title: text('title').notNull(),
-//   createdAt: integer('created_at', { mode: 'timestamp' })
-//     .notNull()
-//     .$defaultFn(() => new Date()),
-// });
+// ---------------------------------------------------------------------------
+// Research access requests (the sign-up form on Home).
+
+/** One row per email address. Submissions show up in Layerwise's Database panel. */
+export const accessRequests = sqliteTable(
+  'access_requests',
+  {
+    id: text('id')
+      .primaryKey()
+      .$defaultFn(() => crypto.randomUUID()),
+    name: text('name').notNull(),
+    /** Stored lowercased and trimmed, so the same address can't be added twice. */
+    email: text('email').notNull().unique(),
+    organization: text('organization').notNull(),
+    intendedUse: text('intended_use').notNull(),
+    createdAt: integer('created_at', { mode: 'timestamp' })
+      .notNull()
+      .$defaultFn(() => new Date()),
+    /** When the owner was emailed about this request; null if not emailed. */
+    ownerNotifiedAt: integer('owner_notified_at', { mode: 'timestamp' })
+  },
+  (table) => [
+    index('access_requests_owner_notified_at_idx').on(table.ownerNotifiedAt)
+  ]
+);
+
+/**
+ * Every submission attempt, keyed by a salted hash of the visitor's IP address
+ * (never the address itself). Used for the 5-per-hour rate limit and pruned
+ * after a day.
+ */
+export const accessAttempts = sqliteTable(
+  'access_attempts',
+  {
+    id: integer('id').primaryKey({ autoIncrement: true }),
+    visitorHash: text('visitor_hash').notNull(),
+    createdAt: integer('created_at', { mode: 'timestamp' }).notNull()
+  },
+  (table) => [
+    index('access_attempts_visitor_created_idx').on(
+      table.visitorHash,
+      table.createdAt
+    )
+  ]
+);
+
+/** Server-only values generated on first use, like the IP hashing salt. */
+export const siteSecrets = sqliteTable('site_secrets', {
+  key: text('key').primaryKey(),
+  value: text('value').notNull()
+});

@@ -29,12 +29,5 @@
       "service": "layerwise-project-email",
       "entrypoint": "ProjectEmail"
     }
-  ],
-  "vars": {
-    "BETTER_AUTH_URL": "",
-    "BETTER_AUTH_SECRET": ""
-  },
-  "secrets": {
-    "required": ["AUTH_EMAIL_URL"]
-  }
+  ]
 }

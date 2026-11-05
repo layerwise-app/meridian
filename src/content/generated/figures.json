@@ -1,0 +1,93 @@
+{
+  "home": {
+    "src": "/figures/home-800.webp",
+    "srcSet": "/figures/home-800.webp 800w, /figures/home-1600.webp 1600w",
+    "width": 800,
+    "height": 800,
+    "hash": "3cb436f0d6ecd996"
+  },
+  "research": {
+    "src": "/figures/research-800.webp",
+    "srcSet": "/figures/research-800.webp 800w, /figures/research-1600.webp 1600w",
+    "width": 800,
+    "height": 200,
+    "hash": "5e2c658fcdf39490"
+  },
+  "meridian-3": {
+    "src": "/figures/meridian-3-800.webp",
+    "srcSet": "/figures/meridian-3-800.webp 800w, /figures/meridian-3-1600.webp 1600w",
+    "width": 800,
+    "height": 400,
+    "hash": "0ae004d356ad9629"
+  },
+  "careers": {
+    "src": "/figures/careers-800.webp",
+    "srcSet": "/figures/careers-800.webp 800w, /figures/careers-1600.webp 1600w",
+    "width": 800,
+    "height": 200,
+    "hash": "9088322647138d22"
+  },
+  "privacy": {
+    "src": "/figures/privacy-800.webp",
+    "srcSet": "/figures/privacy-800.webp 800w, /figures/privacy-1600.webp 1600w",
+    "width": 800,
+    "height": 200,
+    "hash": "a48b6fa8cfda99b9"
+  },
+  "terms": {
+    "src": "/figures/terms-800.webp",
+    "srcSet": "/figures/terms-800.webp 800w, /figures/terms-1600.webp 1600w",
+    "width": 800,
+    "height": 200,
+    "hash": "b0c4e042800c51c8"
+  },
+  "not-found": {
+    "src": "/figures/not-found-800.webp",
+    "srcSet": "/figures/not-found-800.webp 800w, /figures/not-found-1600.webp 1600w",
+    "width": 800,
+    "height": 320,
+    "hash": "6ea647b51561291e"
+  },
+  "a-public-test-set-we-promise-not-to-train-on": {
+    "src": "/figures/a-public-test-set-we-promise-not-to-train-on-800.webp",
+    "srcSet": "/figures/a-public-test-set-we-promise-not-to-train-on-800.webp 800w, /figures/a-public-test-set-we-promise-not-to-train-on-1600.webp 1600w",
+    "width": 800,
+    "height": 320,
+    "hash": "f283d0c06c4fe621"
+  },
+  "why-long-context-fails-quietly": {
+    "src": "/figures/why-long-context-fails-quietly-800.webp",
+    "srcSet": "/figures/why-long-context-fails-quietly-800.webp 800w, /figures/why-long-context-fails-quietly-1600.webp 1600w",
+    "width": 800,
+    "height": 320,
+    "hash": "46ce5d1a2ce6acb5"
+  },
+  "measuring-honesty-under-pressure": {
+    "src": "/figures/measuring-honesty-under-pressure-800.webp",
+    "srcSet": "/figures/measuring-honesty-under-pressure-800.webp 800w, /figures/measuring-honesty-under-pressure-1600.webp 1600w",
+    "width": 800,
+    "height": 320,
+    "hash": "857f1f8802b2bf54"
+  },
+  "counting-with-attention": {
+    "src": "/figures/counting-with-attention-800.webp",
+    "srcSet": "/figures/counting-with-attention-800.webp 800w, /figures/counting-with-attention-1600.webp 1600w",
+    "width": 800,
+    "height": 320,
+    "hash": "c7722c60912a5794"
+  },
+  "sparse-features-in-small-vision-models": {
+    "src": "/figures/sparse-features-in-small-vision-models-800.webp",
+    "srcSet": "/figures/sparse-features-in-small-vision-models-800.webp 800w, /figures/sparse-features-in-small-vision-models-1600.webp 1600w",
+    "width": 800,
+    "height": 320,
+    "hash": "c6a9a4fbce114d68"
+  },
+  "disclosure-norms-for-capability-evaluations": {
+    "src": "/figures/disclosure-norms-for-capability-evaluations-800.webp",
+    "srcSet": "/figures/disclosure-norms-for-capability-evaluations-800.webp 800w, /figures/disclosure-norms-for-capability-evaluations-1600.webp 1600w",
+    "width": 800,
+    "height": 320,
+    "hash": "26957ab191dd54e9"
+  }
+}

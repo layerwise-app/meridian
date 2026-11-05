@@ -1,0 +1,62 @@
+{
+  "home": {
+    "src": "/og/home.png",
+    "alt": "We build language models, and the instruments to tell when they are wrong. — Meridian",
+    "hash": "74fc905486ef8bec"
+  },
+  "research": {
+    "src": "/og/research.png",
+    "alt": "Research index — Meridian",
+    "hash": "0f1ed76d10b25c49"
+  },
+  "meridian-3": {
+    "src": "/og/meridian-3.png",
+    "alt": "Meridian 3 — Meridian",
+    "hash": "cb17f4ee9c6398fa"
+  },
+  "careers": {
+    "src": "/og/careers.png",
+    "alt": "Work slowly on hard problems, with people who check each other’s work. — Meridian",
+    "hash": "9858daff5b6e091d"
+  },
+  "privacy": {
+    "src": "/og/privacy.png",
+    "alt": "Privacy notice — Meridian",
+    "hash": "a4fbe9859e335c8e"
+  },
+  "terms": {
+    "src": "/og/terms.png",
+    "alt": "Terms of use — Meridian",
+    "hash": "540ae2e149674329"
+  },
+  "post-a-public-test-set-we-promise-not-to-train-on": {
+    "src": "/og/post-a-public-test-set-we-promise-not-to-train-on.png",
+    "alt": "A public test set we promise not to train on — Meridian",
+    "hash": "f881dc0261f5dda1"
+  },
+  "post-why-long-context-fails-quietly": {
+    "src": "/og/post-why-long-context-fails-quietly.png",
+    "alt": "Why long context fails quietly — Meridian",
+    "hash": "c274de752b4c2750"
+  },
+  "post-measuring-honesty-under-pressure": {
+    "src": "/og/post-measuring-honesty-under-pressure.png",
+    "alt": "Measuring honesty under pressure — Meridian",
+    "hash": "393e1b318f30fea1"
+  },
+  "post-counting-with-attention": {
+    "src": "/og/post-counting-with-attention.png",
+    "alt": "Counting with attention: a toy model of tally circuits — Meridian",
+    "hash": "8cd6ea2debd682cb"
+  },
+  "post-sparse-features-in-small-vision-models": {
+    "src": "/og/post-sparse-features-in-small-vision-models.png",
+    "alt": "Sparse features in small vision models — Meridian",
+    "hash": "3fd97cef76e570fd"
+  },
+  "post-disclosure-norms-for-capability-evaluations": {
+    "src": "/og/post-disclosure-norms-for-capability-evaluations.png",
+    "alt": "Disclosure norms for dangerous-capability evaluations — Meridian",
+    "hash": "822b708bd79c03bb"
+  }
+}
